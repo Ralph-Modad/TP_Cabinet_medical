@@ -15,6 +15,7 @@ spec:
       containers:
         - name: practitioner-service
           image: practitioner-service:latest
+          imagePullPolicy: Never
           ports:
             - containerPort: 8080
           env:
