@@ -1,6 +1,7 @@
 package microservice.patient_service.controller;
 
 
+import io.swagger.annotations.Api;
 import microservice.patient_service.model.Patient;
 import microservice.patient_service.service.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/patients")
+@Api(value = "Patient", description = "Operations pertaining to patient in the system")
 public class PatientController {
 
     @Autowired
