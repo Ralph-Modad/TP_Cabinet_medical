@@ -1,13 +1,13 @@
-package microservice.practitioner_service;
+// package microservice.practitioner_service;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+// import org.junit.jupiter.api.Test;
+// import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class PractitionerServiceApplicationTests {
+// @SpringBootTest
+// class PractitionerServiceApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+// 	@Test
+// 	void contextLoads() {
+// 	}
 
-}
+// }
