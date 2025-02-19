@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  eureka-server:
+    build: ./eureka-server
+    ports:
+      - "8761:8761"
+    networks:
+      - cabinet-medical-network
+
+  gateway-service:
+    build: ./gateway-service
+    ports:
+      - "8082:8082"
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://eureka-server:8761/eureka/
+    depends_on:
+      - eureka-server
+    networks:
+      - cabinet-medical-network
+
+  patient-service:
+    build: ./patient-service
+    ports:
+      - "8081:8081"
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://eureka-server:8761/eureka/
+    depends_on:
+      - eureka-server
+    networks:
+      - cabinet-medical-network
+
+  practitioner-service:
+    build: ./practitioner-service
+    ports:
+      - "8080:8080"
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://eureka-server:8761/eureka/
+    depends_on:
+      - eureka-server
+    networks:
+      - cabinet-medical-network
+
+networks:
+  cabinet-medical-network:
+    driver: bridge
